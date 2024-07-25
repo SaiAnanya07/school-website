@@ -14,6 +14,7 @@ function Home() {
           a brighter future.
         </p>
       </div>
+      console.log(process.env.API_URL)
       <Carousel className="carousel">
         <Carousel.Item>
           <div
