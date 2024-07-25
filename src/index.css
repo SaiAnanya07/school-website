@@ -1,0 +1,658 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+:root {
+  --primary-color: #e6d8c0;
+  --secondary-color: #black;
+  --accent-color: #8b7355;
+  --background-color: #f5f0e6;
+  --text-color: #333333;
+  --card-background: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* Navbar.css */
+.navbar {
+  background-color: var(--primary-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  color: black; /* Color for links in the main navbar */
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  background: var(--secondary-color);
+  border: none;
+  color: black; /* Color for the menu toggle button */
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background-color: var(--primary-color);
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  z-index: 1001; /* Ensure it's above other content */
+}
+
+.menu-drawer.active {
+  transform: translateX(0);
+}
+
+.menu-drawer ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+.menu-drawer li {
+  margin: 1rem 0;
+}
+
+.menu-drawer a {
+  color: black; /* Color for links inside the menu drawer */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu-drawer a:hover {
+  color: var(--accent-color); /* Customize this hover color if needed */
+}
+
+main {
+  margin-top: 80px; /* To account for fixed navbar */
+  padding: 0;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 448px) {
+  .hero h1 {
+    font-size: 0.5rem;
+  }
+
+  .hero p {
+    font-size: 0.3rem;
+  }
+
+  .hero {
+    height: 10vh;
+  }
+
+  .carousel-item {
+    height: 30vh;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
+
+  .content {
+    width: 90%;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    height: 30vh;
+  }
+
+  .carousel-item {
+    height: 30vh;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
+
+  .content {
+    width: 90%;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+}
+.home {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  padding-bottom: 2rem;
+  width: auto;
+}
+.hero {
+  background-image: url("../src/assets/school.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color);
+  position: relative;
+  background-color: var(--primary-color);
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.hero::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(230, 216, 192, 0.1);
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--primary-color);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card .icon {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.card p,
+.card ul {
+  color: var(--text-color);
+}
+
+.card ul {
+  padding-left: 1.5rem;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 1rem;
+}
+.carousel {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.carousel-item {
+  height: 50vh;
+  position: relative; /* Ensure captions are positioned correctly */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute; /* Cover entire carousel item */
+  top: 0;
+  left: 0;
+}
+
+.carousel-caption {
+  background-color: rgba(230, 216, 192, 0.7); /* Background with opacity */
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--secondary-color);
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  text-align: center; /* Center text within the caption */
+}
+
+.carousel-caption h3 {
+  font-size: 1.5rem;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+}
+
+.academics,
+.admissions,
+.faculty,
+.students,
+.contact {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.faculty ul {
+  list-style-type: none; /* Removes default bullet points */
+  padding: 0; /* Removes default padding */
+}
+
+.faculty li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Space between list items */
+  padding: 10px; /* Space inside each list item */
+  border: 1px solid #ddd; /* Optional: adds a border around each item */
+  border-radius: 8px; /* Optional: rounds the corners of each item */
+  background-color: #f9f9f9; /* Optional: adds a background color */
+}
+
+.profile-image {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the circle */
+  margin-right: 10px; /* Spacing between image and text */
+  vertical-align: middle; /* Aligns the image with text */
+}
+
+.students .content .section {
+  margin-bottom: 20px;
+}
+
+.students .content .section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.students .content .section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.students .content .section ul li {
+  margin-bottom: 10px;
+}
+
+.students .content .section .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.students .content .section .grid-item {
+  text-align: center;
+}
+
+.students .content .section .grid-item img.profile-image {
+  border-radius: 50%;
+  width: 150px; /* Adjust size as needed */
+  height: 150px; /* Adjust size as needed */
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.students .content .section .grid-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.content {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.section {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  color: var (--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.section h3,
+.section h4 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.section ul {
+  padding-left: 1.5rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--secondary-color);
+}
+.academics .hero {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.academics .hero h1 {
+  font-size: 2.5rem;
+}
+
+.academics .content .section {
+  margin-bottom: 30px;
+}
+
+.academics .content .section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.academics .content .section .curriculum {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.academics .content .section .curriculum-group {
+  flex: 1 1 300px; /* Adjust width as needed */
+}
+
+.academics .content .section .curriculum-group h3 {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+
+.academics .content .section .curriculum-group h4 {
+  font-size: 1.5rem;
+  margin: 15px 0 10px;
+}
+
+.academics .content .section .curriculum-group ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.academics .content .section .curriculum-group ul li {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.academics .content .section p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.gallery {
+  background-color: #f5f5dc; /* Beige color */
+  padding: 20px;
+}
+
+.hero.gallery {
+  background-color: #d5bda4; /* Slightly darker beige */
+  padding: 20px;
+  text-align: center;
+}
+
+.hero.gallery h1 {
+  margin: 0;
+  color: #4a4a4a; /* Darker text color */
+}
+
+.section.gallery h2 {
+  border-bottom: 2px solid #d5bda4; /* Border color to match the hero background */
+  padding-bottom: 10px;
+  color: #4a4a4a;
+}
+
+.photo-grid,
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.photo-item,
+.video-item {
+  background-color: #ffffff; /* White background for photos and videos */
+  border: 1px solid #d5bda4; /* Border color matching the theme */
+  border-radius: 8px;
+  padding: 10px;
+  width: calc(50% - 20px); /* Adjust width for two columns */
+}
+
+.photo-item img,
+.video-item video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.photo-item p,
+.video-item p {
+  margin: 10px 0 0;
+  color: #4a4a4a;
+}
+
+@media (max-width: 768px) {
+  .photo-item,
+  .video-item {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .photo-item,
+  .video-item {
+    width: calc(33.333% - 20px); /* Adjust width for three columns */
+  }
+}
+
+.contact-us {
+  background-color: #f5f5dc; /* Beige background for Contact Us page */
+  padding: 20px;
+}
+
+.hero.contact-us {
+  background-color: #d5bda4; /* Slightly darker beige */
+  padding: 20px;
+  text-align: center;
+}
+
+.hero.contact-us h1 {
+  margin: 0;
+  color: #4a4a4a; /* Darker text color */
+}
+
+.section.contact-us h2 {
+  border-bottom: 2px solid #d5bda4; /* Border color to match the hero background */
+  padding-bottom: 10px;
+  color: #4a4a4a;
+}
